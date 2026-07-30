@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 
 
 const n = 16;
+
 function createSquare(n){
     const l = Math.pow(n,2)
     for (i=l; i >0; i--){
@@ -10,7 +11,12 @@ function createSquare(n){
         div.classList.add("square"); 
         div.style.width = `${550 / n}px`
         div.style.height = `${550 / n}px`
+        div.addEventListener('mouseenter', () => {
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+            div.style.backgroundColor = randomColor;
+        });
     }
+
 }
 createSquare(n);
 
@@ -31,5 +37,3 @@ function userGrid(){
 
 const go = document.getElementById('createGrid');
 go.addEventListener('click', () => {userGrid()});
-
-go.addEventListener('hover', () => (hex()))
