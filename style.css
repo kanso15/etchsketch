@@ -1,6 +1,8 @@
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .square{
@@ -9,10 +11,27 @@ body{
     box-sizing: border-box;
 }
 
+div{
+        border: 1px solid rgba(216, 17, 17, 0.457);
+}
+
+.userArea{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 #container{
     display: flex;
     width: 550px;
     height: 550px;
     flex-wrap: wrap;
+    
 }
 

@@ -4,17 +4,21 @@ const container = document.getElementById("container");
 const n = 16;
 
 function createSquare(n){
-    const l = Math.pow(n,2)
+    const c = Math.floor(n);
+    const l = Math.pow(c,2)
     for (i=l; i >0; i--){
         const div = document.createElement("div");
         container.appendChild(div);
         div.classList.add("square"); 
-        div.style.width = `${550 / n}px`
-        div.style.height = `${550 / n}px`
+        div.style.width = `${550 / c}px`
+        div.style.height = `${550 / c}px`
         div.addEventListener('mouseenter', () => {
             const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
             div.style.backgroundColor = randomColor;
         });
+
+        const clear = document.getElementById('clearButton');
+        clear.addEventListener('click', () => {div.style.backgroundColor = "white"})
     }
 
 }
